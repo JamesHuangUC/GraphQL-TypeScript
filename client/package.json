@@ -1,0 +1,64 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/react-hooks": "^3.1.3",
+    "@graphql-codegen/cli": "^1.8.2",
+    "@graphql-codegen/introspection": "^1.8.2",
+    "@graphql-codegen/typescript": "^1.8.2",
+    "@graphql-codegen/typescript-operations": "^1.8.2",
+    "@graphql-codegen/typescript-react-apollo": "^1.8.2",
+    "@types/jest": "24.0.19",
+    "@types/node": "12.11.7",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
+    "@types/react-router-dom": "^5.1.0",
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
+    "apollo-link-http": "^1.5.16",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "typescript": "3.6.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "client": "yarn start",
+    "server:install": "cd server && yarn",
+    "server": "cd server && yarn start",
+    "dev": "concurrently \"yarn run server\" \"sleep 10 && yarn run client\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,html}\" \"test/**/*.ts\"",
+    "build": "tsc -p tsconfig.json && react-scripts build",
+    "generate": "graphql-codegen --config codegen.js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "concurrently": "^5.0.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.18.2"
+  }
+}
