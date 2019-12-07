@@ -41,7 +41,9 @@ const CatTable: React.FC = () => {
       </thead>
       <tbody>
         {cats.length > 0 ? (
-          cats.map((cat: Partial<CatType>, index: number) => <CatDetail key={index} index={index} cat={cat} />)
+          cats.map((cat: Pick<CatType, 'id' | 'name' | 'age' | 'breed'>, index: number) => (
+            <CatDetail key={index} index={index} cat={cat} />
+          ))
         ) : (
           <tr>
             <td colSpan={4}>No cats...</td>

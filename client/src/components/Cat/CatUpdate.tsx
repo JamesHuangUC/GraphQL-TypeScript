@@ -21,11 +21,11 @@ const CatUpdate: React.FC = () => {
   const context = useContext(CatContext);
   const { currentCatId, currentCat, setIsUpdate } = context;
 
-  const [catInput, setCatInput] = useState({
+  const [catInput, setCatInput] = useState<Pick<CatType, 'name' | 'age' | 'breed'>>({
     name: currentCat.name,
     age: currentCat.age,
     breed: currentCat.breed,
-  } as Partial<CatType>);
+  });
 
   useEffect(() => {
     setCatInput({
@@ -35,7 +35,7 @@ const CatUpdate: React.FC = () => {
     });
   }, [currentCatId, currentCat, setIsUpdate]);
 
-  const [updateCat] = useMutation(UPDATE_CAT, {
+  const [updateCat] = useMutation<UpdateCatMutation, UpdateCatMutationVariables>(UPDATE_CAT, {
     update(cache, { data }) {
       const existingCats = cache.readQuery<GetCatsQuery>({ query: GET_MY_CATS });
       const newCats = existingCats!.cats.map(c => {

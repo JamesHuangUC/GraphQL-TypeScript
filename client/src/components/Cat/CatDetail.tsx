@@ -18,7 +18,7 @@ const DELETE_CAT = gql`
 
 interface Props {
   index: number;
-  cat: Partial<CatType>;
+  cat: Pick<CatType, 'id' | 'name' | 'age' | 'breed'>;
 }
 
 const CatDetail: React.FC<Props> = ({ index, cat }) => {

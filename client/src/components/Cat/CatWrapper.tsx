@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const CatWrapper = () => {
   const [isUpdate, setIsUpdate] = useState(false);
-  const [currentCat, setCurrentCat] = useState({} as Partial<CatType>);
+  const [currentCat, setCurrentCat] = useState({} as Pick<CatType, 'id' | 'name' | 'age' | 'breed'>);
   const [currentCatId, setCurrentCatId] = useState('');
 
   return (
